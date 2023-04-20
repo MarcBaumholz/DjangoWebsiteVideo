@@ -6,39 +6,58 @@
 		/* background-color: #f0f0f0; Ihre benutzerdefinierte Farbe */
 	  	background: linear-gradient(135deg, #f056eb 0%, #c4c62f 100%) fixed
 	  }
+	  .headingstyling {
+			font-weight: 800;
+		  	font-size: 2rem;
+			line-height: 2rem;
+		  	text-align: center;
+		  	color: Black;
+		  	margin-top: 1rem;
+	  }
+	  .datestyling {
+			font-weight: 600;
+		  	font-size: 2rem;
+			line-height: 2rem;
+		  	text-align: center;
+		  	color: Black;
+		  	margin-top: 1rem;
+	  }
+	  .middle {
+		  display: block;
+		  margin: 0 auto;
+	  }
 	</style>
-
+	<h2 class=" bi bi-balloon-heart-fill headingstyling">{{ object.title }} </h2>
 	<div class="container my-custom-background">
-		<div class="row mt-5">
-			<div class="col-md-8 col-sm-12 col-xs-12">
-				<video-js
-					width="720"
-					height="405"
-					controls
-					data-setup='{"playbackRates": [0.5, 1, 0.99], "fluid": true}'>
-					<source src="/media/{{ object.video_file }}" type="video/mp4">
-					<p class="vjs-no-js">
-					To view this video please enable Javascript, and consider upgrading to a web browser that <a href="https://videojs.com/html5-video-support/" target="_blank">supports HTML5 video</a>
-					</p>
-				</video-js>
-				<h5 class="mb-5">{{ object.title }}</h5>
-				<div class="row">
-					<div class="d-flex justify-content-center align-items-center">
-						<p>{{ object.date_posted | date:"M d, Y" }}</p>
-					</div>
-                    <!-- Modal -->
-                    <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
-                        <div class="modal-dialog" role="document">
-                        <div class="modal-content">
-                            <div class="modal-header">
+		<div class="row mt-5 align-self-center ">
+				<div class="col-md-8 col-sm-12 col-xs-12 middle">
+					<video-js
+						width="720"
+						height="405"
+						controls
+						data-setup='{"playbackRates": [0.5, 1, 0.99], "fluid": true}'>
+						<source src="/media/{{ object.video_file }}" type="video/mp4">
+						<p class="vjs-no-js">
+						To view this video please enable Javascript, and consider upgrading to a web browser that <a href="https://videojs.com/html5-video-support/" target="_blank">supports HTML5 video</a>
+						</p>
+					</video-js>
+					<div class="datestyling">
+						<div>
+							<p>{{ object.date_posted | date:"M d, Y" }}</p>
+						</div>
+						<!-- Modal -->
+						<div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+							<div class="modal-dialog" role="document">
+							<div class="modal-content">
+								<div class="modal-header">
 
-                            </div>
+								</div>
 
-                        </div>
-                        </div>
-                    </div>
+							</div>
+							</div>
+						</div>
 
-			</div>
+				</div>
 		</div>
 	</div>
 
