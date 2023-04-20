@@ -1,7 +1,14 @@
 {% extends 'videos/base.html' %}
 
 {% block content %}
-	<div class="container">
+	<style>
+	  .my-custom-background {
+		/* background-color: #f0f0f0; Ihre benutzerdefinierte Farbe */
+	  	background: linear-gradient(135deg, #f056eb 0%, #c4c62f 100%) fixed
+	  }
+	</style>
+
+	<div class="container my-custom-background">
 		<div class="row mt-5">
 			<div class="col-md-8 col-sm-12 col-xs-12">
 				<video-js
@@ -16,11 +23,9 @@
 				</video-js>
 				<h5 class="mt-4">{{ object.title }}</h5>
 				<div class="row">
-					<div class="col-md-6 text-muted">
+					<div class="d-flex justify-content-center align-items-center">
 						<p>{{ object.date_posted | date:"M d, Y" }}</p>
 					</div>
-
-
                     <!-- Modal -->
                     <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
                         <div class="modal-dialog" role="document">
