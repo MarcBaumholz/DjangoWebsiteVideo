@@ -1,6 +1,12 @@
 <!doctype html>
-<html lang="en">
-  <head>
+<style>
+  .my-custom-background {
+    /* background-color: #f0f0f0; Ihre benutzerdefinierte Farbe */
+    background: linear-gradient(135deg, #f056eb 0%, #c4c62f 100%) fixed
+  }
+</style>
+<html lang="en" class="my-custom-background">
+  <head class="my-custom-background">
     <!-- Required meta tags -->
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
@@ -16,16 +22,8 @@
 
     <title>Hello, world!</title>
   </head>
-  <body>
+  <body class="my-custom-background">
     {% block content %}
-    <style>
-	  .my-custom-background {
-		/* background-color: #f0f0f0; Ihre benutzerdefinierte Farbe */
-	  	background: linear-gradient(135deg, #f056eb 0%, #c4c62f 100%) fixed
-	  }
-	</style>
-    <div class="my-custom-background">
-    </div>
     {% endblock content %}
 
     <!-- Optional JavaScript -->
